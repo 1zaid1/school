@@ -72,12 +72,17 @@ function draw() {
 
             // Arms
             let rWrist = createVector(p.rightWrist.x, p.rightWrist.y);
-            rWrist.x = (rWrist.x-p.rightElbow.x)*1.3 + p.rightElbow.x;
-            rWrist.y = (rWrist.y-p.rightElbow.y)*1.3 + p.rightElbow.y;
+            rWrist.x = (rWrist.x-p.rightElbow.x)*1 + p.rightElbow.x;
+            rWrist.y = (rWrist.y-p.rightElbow.y)*1 + p.rightElbow.y;
 
             let lWrist = createVector(p.leftWrist.x, p.leftWrist.y);
-            lWrist.x = (lWrist.x-p.leftElbow.x)*1.3 + p.leftElbow.x;
-            lWrist.y = (lWrist.y-p.leftElbow.y)*1.3 + p.leftElbow.y;
+            lWrist.x = (lWrist.x-p.leftElbow.x)*1 + p.leftElbow.x;
+            lWrist.y = (lWrist.y-p.leftElbow.y)*1 + p.leftElbow.y;
+
+            fill(255);
+            circle(lWrist.x, lWrist.y, sz/10);
+            circle(rWrist.x, rWrist.y, sz/10);
+            noFill();
 
             Line(p.leftShoulder, p.leftElbow);
             Line(p.rightShoulder, p.rightElbow);
